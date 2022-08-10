@@ -1,0 +1,183 @@
+@import "./colors";
+@import "./variables";
+// @import "./style.scss";
+
+
+@include overlay();
+
+body {
+    background: rgb(223, 215, 215);
+}
+
+nav {
+    @include flex-elements;
+    width: 85%;
+    margin-top: 1em
+}
+
+.logo {
+    @include flex-elements-c;
+
+    p {
+        font-size: 1.5em;
+    }
+}
+
+.middle {
+    width: 50%;
+    background: rgb(191, 191, 224);
+    border-radius: 5px;
+    @include flex-elements-c;
+
+    ul {
+        @include flex-elements;
+        width: 70%;
+        height: 100%;
+        margin-top: 0;
+
+        li {
+            @include flex-elements-c;
+            color: #000000;
+            height: 50px;
+            width: 110px;
+            cursor: pointer;
+
+            &:hover {
+                background: rgb(182, 182, 212);
+            }
+
+        }
+    }
+}
+
+.left {
+    // background: green;
+    height: 50px;
+    width: 100px;
+    @include flex-elements-c;
+    cursor: pointer;
+    transition: all 600ms ease;
+
+    &:hover {
+        color: rgb(75, 58, 58);
+        background: rgb(191, 191, 224);
+        border-radius: 5px
+    }
+}
+
+.container {
+    @include flex-elements-c(column);
+    width: 100%;
+    height: 100%;
+}
+
+.quizzie,
+.prob-lib,
+.invent-corner {
+    width: 70%;
+    height: 400px;
+    background: rgb(243, 235, 235);
+    margin-top: 2em;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    // border: 1px solid grey
+    cursor: pointer;
+    transition: all 750ms ease;
+
+
+    &:hover {
+        box-shadow: .5px .5px 10px rgba($color: #000000, $alpha: .10), -.5px -.5px 10px grey;
+    }
+}
+
+// .quizzie {}
+
+
+.q-cot,
+.vent-cot {
+    @include flex-elements-c(column);
+
+}
+
+
+.sub {
+    @include flex-elements-c(column);
+    width: 140px;
+    height: 50px;
+    background: blue;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 500ms ease;
+
+    &:hover {
+        background: rgb(84, 84, 241);
+    }
+}
+
+.text {
+    font-size: 1.1em;
+    line-height: 1.2em;
+    max-width: 700px;
+    margin-top: 1em;
+}
+
+// .l {
+//     color: rgb(75, 58, 58);
+//     cursor: pointer;
+//     transition: all 700ms ease;
+
+//     &:hover {
+//         color: rgb(185, 174, 174);
+//     }
+// }
+
+.f-warn {
+    background: rgba($color: #201e1e, $alpha: .90);
+    height: 90px;
+    // width: 50%;
+    @include flex-elements-c(column);
+    padding: 20px;
+    max-width: 350px;
+
+    span {
+        color: rgb(172, 172, 197);
+        // display: none;
+    }
+}
+
+.invent-corner {
+    margin-bottom: 2em;
+}
+
+.none {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+// ######### MOBILE VIEW ##############
+
+@media (max-width: 600px) {
+    .middle {
+        display: none;
+
+        ul {
+            // display: none;
+        }
+    }
+
+    body {
+        // background: black;
+    }
+
+    .quizzie,
+    .prob-lib,
+    .invent-corner {
+        width: 85%;
+    }
+}
